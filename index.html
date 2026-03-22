@@ -15,21 +15,32 @@
     <link href="styles.css" rel="stylesheet" />
     <style type="text/css">
 
-
-
-
-        .hero-section {
-            background: linear-gradient(rgba(0, 29, 87, 0.7), rgba(0, 29, 87, 0.7)), url('images/hero.png');
-            background-size: cover;
-            background-position: center;
-            height: 80vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
+        .hero {
+          text-align: center;
+          padding: 60px 20px;
         }
-        .hero-title {
-            text-shadow: 0 0 20px rgba(21, 106, 242, 0.8);
+        .hero h1 {
+          font-size: 2.5em;
+        }
+        .btn {
+          background: #00adb5;
+          color: white;
+          padding: 10px 20px;
+          border-radius: 8px;
+          text-decoration: none;
+        }
+        .features {
+          display: flex;
+          gap: 20px;
+          justify-content: center;
+          margin: 40px 0;
+        }
+        .card {
+          background: rgba(255,255,255,0.1);
+          padding: 20px;
+          border-radius: 12px;
+          width: 200px;
+          text-align: center;
         }
     </style>
 </head>
@@ -57,12 +68,26 @@
     </header>
 
     <main>
-        <section class="hero-section">
-            <div class="container">
-                <h1 class="hero-title">Welcome to ZAKA</h1>
-                <p class="lead" style="color: #156AF2;">Zaka is a specialized platform for buying video games and in-game currency. It offers fast delivery via instant codes, competitive prices, and a smooth, secure experience for gamers.</p>
-                <a href="store.html" class="btn-primary-zaka">Explore Store</a>
-            </div>
+        <section class="hero">
+            <h1>Welcome to ZAKA Gaming Platform</h1>
+            <p style="text-align: center;">Your gateway to immersive gaming experiences</p>
+            <a href="store.html" class="btn">Explore Store</a>
+        </section>
+        <section class="features">
+          <div class="card">
+            <h3>🎮 Games</h3>
+            <p>Browse the latest and trending games</p>
+          </div>
+        
+          <div class="card">
+            <h3>👨‍💻 Developers</h3>
+            <p>Join our developer community</p>
+          </div>
+        
+          <div class="card">
+            <h3>⭐ Reviews</h3>
+            <p>See what others think before you buy</p>
+          </div>
         </section>
 
         <section class="container py-5">
