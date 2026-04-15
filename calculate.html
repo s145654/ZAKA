@@ -11,7 +11,7 @@
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark sticky-top py-3">
             <div class="container">
-                <a class="navbar-brand" href="index.html">                    
+                <a class="navbar-brand" href="index.html">
                     <img src="logo.png" alt="ZAKA Logo" width="60" height="60" class="me-2">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -35,41 +35,110 @@
 
     <main class="container py-5">
         <div class="row justify-content-center">
-            <div class="col-md-6">
+            <div class="col-md-7">
                 <div class="glass-card">
-                    <h2 class="text-center mb-4">ZAKA Store Bill Calculator</h2>
-                    <p class="text-center mb-4">Calculate your total purchase including special discounts.</p>
-                    
+                    <h2 class="text-center mb-1">🛒 ZAKA Store Bill Calculator</h2>
+                    <p class="text-center text-white-50 mb-4">
+                        Calculate your total purchase with applicable discounts.
+                    </p>
+
+                    <!-- Discount Rules Info - uses Bootstrap Alert component -->
+                    <div class="alert alert-info mb-4">
+                        <strong>💡 Available Discounts:</strong>
+                        <ul class="mb-0 mt-1">
+                            <li>👴 <strong>Senior (60+):</strong> 15% off</li>
+                            <li>🎓 <strong>Student (13-22):</strong> 5% off</li>
+                            <li>📦 <strong>Bulk Purchase (5+ items):</strong> extra 5% off</li>
+                            <li>⭐ <strong>Premium Member:</strong> extra 10% off</li>
+                        </ul>
+                    </div>
+
+                    <!-- Calculator Form -->
+                    <!-- onsubmit calls calculateBill() in scripts.js -->
                     <form onsubmit="calculateBill(event)">
+
+                        <!-- Item Price Input -->
                         <div class="mb-3">
-                            <label for="item-price" class="form-label">Item Price ($)</label>
-                            <input type="number" id="item-price" class="form-control" step="0.01" min="0" placeholder="e.g. 59.99" required>
+                            <label for="item-price" class="form-label">Game Price (USD $)</label>
+                            <div class="input-group">
+                                <span class="input-group-text bg-transparent text-white border-secondary">$</span>
+                                <input type="number" id="item-price" class="form-control"
+                                       step="0.01" min="0.01" placeholder="e.g. 29.99" required>
+                            </div>
+                            <div class="form-text text-white-50">Enter the price of one copy of the game.</div>
                         </div>
 
+                        <!-- Quantity Input -->
                         <div class="mb-3">
                             <label for="item-qty" class="form-label">Quantity</label>
-                            <input type="number" id="item-qty" class="form-control" min="1" value="1" required>
+                            <input type="number" id="item-qty" class="form-control"
+                                   min="1" max="100" value="1" required>
+                            <div class="form-text text-white-50">Buy 5 or more for a bulk discount!</div>
                         </div>
 
-                        <div class="mb-4">
+                        <!-- Age Input -->
+                        <div class="mb-3">
                             <label for="user-age" class="form-label">Your Age</label>
-                            <input type="number" id="user-age" class="form-control" min="1" placeholder="Enter your age for discounts" required>
-                            <small class="text-info">10% discount for customers aged 60+!</small>
+                            <input type="number" id="user-age" class="form-control"
+                                   min="1" max="120" placeholder="Enter your age" required>
+                            <div class="form-text text-white-50">
+                                Age determines eligibility for senior (60+) or student (13-22) discounts.
+                            </div>
                         </div>
 
-                        <button type="submit" class="btn-primary-zaka w-100">Calculate Total</button>
+                        <!-- Premium Member Checkbox -->
+                        <div class="mb-4">
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" id="is-premium" role="switch">
+                                <label class="form-check-label" for="is-premium">
+                                    ⭐ I am a ZAKA Premium Member (+10% extra discount)
+                                </label>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary w-100 btn-lg">
+                            🧮 Calculate My Total
+                        </button>
                     </form>
 
-                    <!-- Result Section -->
+                    <!-- Calculation Result appears here after the form is submitted -->
+                    <!-- Built dynamically by calculateBill() in scripts.js -->
                     <div id="calc-result"></div>
+                </div>
+            </div>
+
+            <!-- Side info card -->
+            <div class="col-md-4 mt-4 mt-md-0">
+                <div class="glass-card">
+                    <h5 class="mb-3">📌 How It Works</h5>
+                    <p class="text-white-50 small">
+                        This calculator uses <strong>if-else conditions</strong> in JavaScript
+                        to automatically apply the right discounts based on your age,
+                        order size, and membership status.
+                    </p>
+                    <hr class="border-secondary">
+                    <h6 class="mb-2">Formula:</h6>
+                    <code class="text-info small d-block mb-2">
+                        Subtotal = Price × Quantity
+                    </code>
+                    <code class="text-info small d-block mb-2">
+                        Total = Subtotal − Discounts
+                    </code>
+                    <hr class="border-secondary">
+                    <p class="text-white-50 small mb-0">
+                        Discounts are applied in this order:<br>
+                        1. Age-based discount first<br>
+                        2. Bulk purchase on remaining<br>
+                        3. Premium member on remaining
+                    </p>
                 </div>
             </div>
         </div>
     </main>
 
     <footer id="main-footer">
-        <div class="container text-center">
-            <p>Email: ZAKAforGamers@gmail.com</p>
+        <div class="container text-center mb-5">
+            <p>Email: ZAKAforGamers@gmail.com &nbsp;|&nbsp; Instagram: zakagg</p>
         </div>
     </footer>
 
