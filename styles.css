@@ -1,23 +1,19 @@
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@100;400;700&display=swap');
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+:root {
+    --zaka-blue: #001D57;
+    --zaka-light-blue: #156AF2;
+    --zaka-accent: #00adb5;
+    --zaka-bg-gradient: radial-gradient(circle at top right, #042F7D, #001D57);
 }
 
 body {
-    background-color: #001D57;
-    background-image: radial-gradient(circle at top right, #042F7D, #001D57);
+    background-color: var(--zaka-blue);
+    background-image: var(--zaka-bg-gradient);
     color: #ffffff;
-    opacity: 1;
     font-family: 'IBM Plex Sans Arabic', sans-serif;
-    font-size: 16px;
-    
-    line-height: 1.6;
     min-height: 100vh;
     overflow-x: hidden;
 }
+
 body::before {
     content: "";
     position: fixed;
@@ -29,125 +25,74 @@ body::before {
     background-size: 50px 50px;
     z-index: -1;
 }
-h1 {
-    font-size: 56px;
-    font-weight: 800;
-    margin-top: 20px;
-    margin-left: 0; 
-}
-
-p {
-    margin-bottom: 1.5rem;
-    text-align: justify;
-    vertical-align: baseline;
-}
 
 .glass-card {
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    border-style: solid;
-    border-width: 1px;
-    border-color: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 15px;
-    
     padding: 30px;
-    margin-top: 2rem;
     color: rgba(255, 255, 255, 0.9);
 }
 
+.navbar {
+    background: rgba(0, 0, 0, 0.3) !important;
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
 .btn-primary-zaka {
-    background-color: #156AF2;
+    background-color: var(--zaka-light-blue);
     border: none;
     border-radius: 8px;
     color: #ffffff;
     padding: 10px 25px;
+    transition: all 0.3s ease;
     text-decoration: none;
     display: inline-block;
-    transition: all 0.3s ease;
 }
 
 .btn-primary-zaka:hover {
     background-color: #ffffff;
-    color: #156AF2;
+    color: var(--zaka-light-blue);
     box-shadow: 0 0 15px rgba(21, 106, 242, 0.5);
-}
-.navbar {
-    background: rgba(0, 0, 0, 0.15);
-    backdrop-filter: blur(8px);
-    border-radius: 12px;
-}
-
-.navbar-nav .nav-link {
-    margin-left: 10px;
-    font-weight: 500;
-    color: white !important;
-}
-
-.navbar-nav .nav-link:hover {
-    color: #9ec5fe !important;
-}
-
-.navbar-nav .nav-link.active {
-    border-bottom: 2px solid #156AF2;
 }
 
 #main-footer {
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(0, 0, 0, 0.4);
     padding: 40px 0;
-    margin-top: 100px;
+    margin-top: 50px;
 }
 
-.zaka-table {
-    border-style: solid;
-    border-color: rgba(255, 255, 255, 0.1);
-    border-width: 1px;
-    float: none;
-}
-ul.zaka-list {
-    list-style-type: square;
-    list-style-position: inside;
-    margin-left: 0;
-}
-.zaka-mini-table {
-    width: 75%;
-    margin-top: 10px;
-    border-collapse: collapse;
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(8px);
-    border-radius: 10px;
-    overflow: hidden;
-    font-size: 0.9rem;
-}
-.zaka-mini-table th {
-    background:#156AF2;
+/* Moving Banner */
+.moving-banner {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.8);
     color: white;
-    padding: 8px;
-    text-align: center;
-}
-.zaka-mini-table td {
-    padding: 8px;
-    text-align: center;
-    color: #e0e0e0;
-}
-.zaka-mini-table tr:nth-child(even) {
-    background: rgba(255, 255, 255, 0.03);
-}
-.zaka-mini-table tr:hover {
-    background: rgba(21, 106, 242, 0.2);
-    transition: 0.3s;
-}
-.glass-logo-container {
-    background: rgba(255, 255, 255, 0.1); 
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(0, 163, 255, 0.3);
-    border-radius: 15px;
-    padding: 8px;
-    box-shadow: 0 8px 32px 0 rgba(0, 100, 255, 0.2);
-    display: inline-block;
+    padding: 10px 0;
+    white-space: nowrap;
+    overflow: hidden;
+    z-index: 1000;
 }
 
-.logo-img {
-    filter: drop-shadow(0 0 8px rgba(0, 163, 255, 0.6));
+.moving-banner p {
+    display: inline-block;
+    padding-left: 100%;
+    animation: marquee 20s linear infinite;
+    margin: 0;
+}
+
+@keyframes marquee {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(-100%, 0); }
+}
+
+/* Slideshow */
+.carousel-item img {
+    height: 400px;
+    object-fit: cover;
+    border-radius: 15px;
 }
