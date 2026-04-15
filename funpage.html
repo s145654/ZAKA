@@ -1,30 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-bs-theme="dark">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fun Page | ZAKA</title>
+    <title>Mini Game | ZAKA</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="styles.css" rel="stylesheet">
-    <style>
-        #fun-canvas {
-            background-color: #fff;
-            border: 5px solid var(--zaka-light-blue);
-            border-radius: 10px;
-            cursor: crosshair;
-            width: 100%;
-            height: 400px;
-        }
-        .canvas-container {
-            position: relative;
-        }
-    </style>
 </head>
+
 <body>
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark sticky-top py-3">
             <div class="container">
-                <a class="navbar-brand" href="index.html">                    
+                <a class="navbar-brand" href="index.html">
                     <img src="logo.png" alt="ZAKA Logo" width="60" height="60" class="me-2">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -39,7 +28,7 @@
                         <li class="nav-item"><a class="nav-link" href="store.html">Store</a></li>
                         <li class="nav-item"><a class="nav-link" href="questionnaire.html">Feedback</a></li>
                         <li class="nav-item"><a class="nav-link" href="calculate.html">Calculator</a></li>
-                        <li class="nav-item"><a class="nav-link active" href="funpage.html">Fun Page</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="funpage.html">Mini Game</a></li>
                     </ul>
                 </div>
             </div>
@@ -48,38 +37,101 @@
 
     <main class="container py-5">
         <div class="row justify-content-center">
-            <div class="col-md-10">
-                <div class="glass-card text-center">
-                    <h2 class="mb-4">ZAKA Creative Zone</h2>
-                    <p class="mb-4">Unleash your creativity! Use our interactive drawing tool to sketch your next game character idea.</p>
-                    
-                    <div class="row mb-3">
-                        <div class="col-md-4 offset-md-4">
-                            <label for="color-picker" class="form-label">Pick Your Color:</label>
-                            <input type="color" id="color-picker" class="form-control form-control-color w-100" value="#156AF2">
+            <div class="col-md-8">
+
+                <!-- ===== START SCREEN ===== -->
+                <!-- Shown first. Hidden once startQuiz() is called. -->
+                <div id="quiz-start" class="card border-secondary shadow text-center py-5">
+                    <div class="display-4 mb-3">🎮</div>
+                    <h2 class="mb-2">ZAKA Mini Game</h2>
+                    <p class="lead text-white-50 mb-4">
+                        Test your gaming knowledge! Answer 8 multiple-choice questions.<br>
+                        You have <strong>15 seconds</strong> per question. Good luck!
+                    </p>
+                    <div class="row justify-content-center mb-4">
+                        <div class="col-auto">
+                            <div class="card border-secondary px-4 py-3 text-center">
+                                <div class="fs-4"></div>
+                                <div class="small">8 Questions</div>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <div class="card border-secondary px-4 py-3 text-center">
+                                <div class="fs-4"></div>
+                                <div class="small">15s Each</div>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <div class="card border-secondary px-4 py-3 text-center">
+                                <div class="fs-4"></div>
+                                <div class="small">4 Choices</div>
+                            </div>
                         </div>
                     </div>
-
-                    <div class="canvas-container mb-4">
-                        <canvas id="fun-canvas" width="800" height="400"></canvas>
-                    </div>
-
-                    <div class="d-flex justify-content-center gap-3">
-                        <button onclick="clearCanvas()" class="btn btn-outline-danger px-5">Clear Canvas</button>
-                        <button onclick="window.print()" class="btn btn-outline-info px-5">Save Sketch</button>
-                    </div>
+                    <!-- Clicking this calls startQuiz() in scripts.js -->
+                    <button onclick="startQuiz()" class="btn btn-primary btn-lg px-5">
+                        Start Quiz
+                    </button>
                 </div>
+
+                <!-- ===== ACTIVE QUIZ AREA ===== -->
+                <!-- Hidden at start. Shown when a quiz is in progress. -->
+                <!-- ALL content inside (question text, buttons) is built dynamically by JavaScript -->
+                <div id="quiz-area" class="card p-4 border-secondary shadow" style="display:none; min-height: 400px;">
+
+                    <!-- Top bar: question counter, score, and timer -->
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <!-- Question number - updated by loadQuestion() in scripts.js -->
+                        <span id="question-number" class="badge bg-secondary fs-6">Question 1 of 8</span>
+
+                        <!-- Live score counter - updated by checkAnswer() in scripts.js -->
+                        <span class="text-white-50">
+                            Score: <strong id="current-score" class="text-white">0</strong>
+                        </span>
+
+                        <!-- Countdown timer - updated every second by setInterval in scripts.js -->
+                        <span id="quiz-timer" class="badge bg-success fs-5">15s</span>
+                    </div>
+
+                    <!-- Question text - set dynamically by loadQuestion() -->
+                    <h5 id="question-text" class="mb-4 text-center" style="min-height:60px;">
+                        Loading question...
+                    </h5>
+
+                    <!-- Answer buttons are created here dynamically by loadQuestion() -->
+                    <!-- Each button is built using document.createElement() in scripts.js -->
+                    <div id="options-container" class="mb-3">
+                        <!-- JavaScript inserts <button> elements here -->
+                    </div>
+
+                    <!-- Feedback message after each answer (correct/wrong/timeout) -->
+                    <!-- Shown and hidden dynamically by showFeedback() in scripts.js -->
+                    <div id="quiz-feedback" class="alert" style="display:none;"></div>
+
+                </div>
+
+                <!-- ===== RESULTS SCREEN ===== -->
+                <!-- Hidden until showQuizResult() builds and injects content here -->
+                <div id="quiz-result" style="display:none;">
+                    <!-- Content is entirely built by showQuizResult() in scripts.js -->
+                </div>
+
             </div>
         </div>
     </main>
 
     <footer id="main-footer">
-        <div class="container text-center">
+        <div class="container text-center mb-5">
             <p>Email: ZAKAforGamers@gmail.com</p>
+        </div>
+        <div class="moving-banner">
+            <p id="banner-text">Loading...</p>
         </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- scripts.js contains all the quiz logic: startQuiz, loadQuestion, checkAnswer, showQuizResult -->
     <script src="scripts.js"></script>
 </body>
+
 </html>
