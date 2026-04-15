@@ -1,17 +1,15 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Discover the best digital games on ZAKA Store." />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Game Store | ZAKA</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="styles.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg navbar-dark py-3">
+        <nav class="navbar navbar-expand-lg navbar-dark sticky-top py-3">
             <div class="container">
                 <a class="navbar-brand" href="index.html">                    
                     <img src="logo.png" alt="ZAKA Logo" width="60" height="60" class="me-2">
@@ -21,11 +19,15 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
                         <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                         <li class="nav-item"><a class="nav-link" href="developer.html">Dev Portal</a></li>
-                        <li class="nav-item"><a class="nav-link" href="store.html">Store</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="store.html">Store</a></li>
+                        <li class="nav-item"><a class="nav-link" href="table_pages.html">Data Hub</a></li>
+                        <li class="nav-item"><a class="nav-link" href="questionnaire.html">Feedback</a></li>
+                        <li class="nav-item"><a class="nav-link" href="calculate.html">Calculator</a></li>
+                        <li class="nav-item"><a class="nav-link" href="funpage.html">Fun Page</a></li>
                     </ul>
                 </div>
             </div>
@@ -33,303 +35,117 @@
     </header>
 
     <main class="container py-5">
-        <h1>Digital Armory</h1>
-        <p>Your portal to infinite adventures. High-performance gaming starts here.</p>
-
-            <div class="col-12 mb-4">
+        <h1 class="text-center mb-5">Digital Armory</h1>
+        <div class="row g-4">
+            <!-- Game Card 1 -->
+            <div class="col-12">
                 <div class="glass-card p-0 overflow-hidden">
                     <div class="row g-0 align-items-center">
                         <div class="col-md-4">
-                            <img src="https://i.ytimg.com/vi/adGdyCdvKz4/maxresdefault.jpg" alt="Fortnite" class="img-fluid" />
+                            <img src="https://i.ytimg.com/vi/adGdyCdvKz4/maxresdefault.jpg" alt="Fortnite" class="img-fluid h-100 w-100" style="object-fit: cover;">
                         </div>
                         <div class="col-md-8 p-4">
-                            <h5 class="card-title h3">Fortnite</h5>
-                            <p class="card-text lead">Jump into the ultimate Battle Royale experience. Build, compete, and create in a world of infinite possibilities.</p>
-                            <table class="zaka-mini-table">
-                        <tr>
-                        <th>Downloads</th>
-                        <th>Rating</th>
-                        <th>Price</th>
-                        </tr>
-                        <tr>
-                        <td>350M</td>
-                        <td>4.8/5</td>
-                        <td>Free</td>
-                        </tr>
-                        </table>
-                        <br/>
-                            <a href="#" class="btn-primary-zaka">Buy V-Bucks Now</a>
+                            <h3 class="mb-3">Fortnite</h3>
+                            <p class="lead">Jump into the ultimate Battle Royale experience. Build, compete, and create in a world of infinite possibilities.</p>
+                            <div class="table-responsive">
+                                <table class="table table-dark table-sm mb-4">
+                                    <thead>
+                                        <tr>
+                                            <th>Downloads</th>
+                                            <th>Rating</th>
+                                            <th>Price</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>350M+</td>
+                                            <td>4.8/5</td>
+                                            <td>Free</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <a href="#" class="btn-primary-zaka">Play Now</a>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-12 mb-4">
+            <!-- Game Card 2 -->
+            <div class="col-12">
                 <div class="glass-card p-0 overflow-hidden">
                     <div class="row g-0 align-items-center">
                         <div class="col-md-4">
-                            <img src="https://image.api.playstation.com/vulcan/ap/rnd/202508/2119/0e5bd9c98da8bbb6a35bec372b40dcb15093a50970c3b478.jpg" alt="Call of Duty" class="img-fluid" />
+                            <img src="https://image.api.playstation.com/vulcan/ap/rnd/202508/2119/0e5bd9c98da8bbb6a35bec372b40dcb15093a50970c3b478.jpg" alt="Call of Duty" class="img-fluid h-100 w-100" style="object-fit: cover;">
                         </div>
                         <div class="col-md-8 p-4">
-                            <h5 class="card-title h3">Call of Duty: Black Ops 7</h5>
-                            <p class="card-text lead">The massive free-to-play combat arena with high-octane FPS action across diverse warzones.</p>
-                        <table class="zaka-mini-table">
-                        <tr>
-                        <th>Downloads</th>
-                        <th>Rating</th>
-                        <th>Price</th>
-                        </tr>
-                        <tr>
-                        <td>100M</td>
-                        <td>4.5/5</td>
-                        <td>49.99$</td>
-                        </tr>
-                        </table>
-                            <br>
-                            <a href="#" class="btn-primary-zaka">Get for $49.99</a>
+                            <h3 class="mb-3">Call of Duty: Black Ops 7</h3>
+                            <p class="lead">The massive free-to-play combat arena with high-octane FPS action across diverse warzones.</p>
+                            <div class="table-responsive">
+                                <table class="table table-dark table-sm mb-4">
+                                    <thead>
+                                        <tr>
+                                            <th>Downloads</th>
+                                            <th>Rating</th>
+                                            <th>Price</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>100M+</td>
+                                            <td>4.5/5</td>
+                                            <td>$49.99</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <a href="#" class="btn-primary-zaka">Buy for $49.99</a>
                         </div>
                     </div>
                 </div>
             </div>
-
-
-            <div class="col-12 mb-4">
+            <!-- Game Card 3 -->
+            <div class="col-12">
                 <div class="glass-card p-0 overflow-hidden">
                     <div class="row g-0 align-items-center">
                         <div class="col-md-4">
-                            <img src= "https://w0.peakpx.com/wallpaper/105/594/HD-wallpaper-video-game-minecraft.jpg" alt="Minecraft" class="img-fluid" />
+                            <img src="https://w0.peakpx.com/wallpaper/105/594/HD-wallpaper-video-game-minecraft.jpg" alt="Minecraft" class="img-fluid h-100 w-100" style="object-fit: cover;">
                         </div>
                         <div class="col-md-8 p-4">
-                            <h5 class="card-title h3">Minecraft</h5>
-                            <p class="card-text lead">Explore infinite worlds and build everything from simple homes to grand castles. Survival or creative, you decide.</p>
-                            <table class="zaka-mini-table">
-                            <tr>
-                            <th>Downloads</th>
-                            <th>Rating</th>
-                            <th>Price</th>
-                            </tr>
-                            <tr>
-                            <td>238M</td>
-                            <td>4.9/5</td>
-                            <td>$29.99</td>
-                            </tr>
-                            </table>
-                            <br>
-                            <a href="#" class="btn-primary-zaka">Get for $29.99</a>
+                            <h3 class="mb-3">Minecraft</h3>
+                            <p class="lead">Explore infinite worlds and build everything from simple homes to grand castles. Survival or creative, you decide.</p>
+                            <div class="table-responsive">
+                                <table class="table table-dark table-sm mb-4">
+                                    <thead>
+                                        <tr>
+                                            <th>Downloads</th>
+                                            <th>Rating</th>
+                                            <th>Price</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>238M+</td>
+                                            <td>4.9/5</td>
+                                            <td>$29.99</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <a href="#" class="btn-primary-zaka">Buy for $29.99</a>
                         </div>
                     </div>
                 </div>
             </div>
-
-
-            <div class="col-12 mb-4">
-                <div class="glass-card p-0 overflow-hidden">
-                    <div class="row g-0 align-items-center">
-                        <div class="col-md-4">
-                            <img src="https://www.riotgames.com/darkroom/1440/8d5c497da1c2eeec8cffa99b01abc64b:5329ca773963a5b739e98e715957ab39/ps-f2p-val-console-launch-16x9.jpg" alt="Valorant" class="img-fluid" />
-                        </div>
-                        <div class="col-md-8 p-4">
-                            <h5 class="card-title h3">Valorant</h5>
-                            <p class="card-text lead">A character-based 5v5 tactical shooter where precise gunplay meets unique hero abilities.</p>
-                            <table class="zaka-mini-table">
-                            <tr>
-                            <th>Downloads</th>
-                            <th>Rating</th>
-                            <th>Price</th>
-                            </tr>
-                            <tr>
-                            <td>14M</td>
-                            <td>4.7/5</td>
-                            <td>Free</td>
-                            </tr>
-                            </table>
-                            <br>
-                            <a href="#" class="btn-primary-zaka">Buy V-Points Now</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="col-12 mb-4">
-                <div class="glass-card p-0 overflow-hidden">
-                    <div class="row g-0 align-items-center">
-                        <div class="col-md-4">
-                            <img src="https://assets.nuuvem.com/image/upload/t_screenshot_full/v1/products/5eb09e2bc883e67fb003013d/screenshots/omthhuq2ntvwzzo0dbss.jpg" alt="League of Legends" class="img-fluid" />
-                        </div>
-                        <div class="col-md-8 p-4">
-                            <h5 class="card-title h3">League of Legends</h5>
-                            <p class="card-text lead">The world's most popular MOBA. Strategy, teamwork, and epic battles in the Summoner's Rift.</p>
-                            <table class="zaka-mini-table">
-                            <tr>
-                            <th>Downloads</th>
-                            <th>Rating</th>
-                            <th>Price</th>
-                            </tr>
-                            <tr>
-                            <td>115M</td>
-                            <td>4.6/5</td>
-                            <td>Free</td>
-                            </tr>
-                            </table>
-                            <br>
-                            <a href="#" class="btn-primary-zaka">Buy Riot-Points Now</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="col-12 mb-4">
-                <div class="glass-card p-0 overflow-hidden">
-                    <div class="row g-0 align-items-center">
-                        <div class="col-md-4">
-                            <img src="https://i.ytimg.com/vi/Smw-13MD6to/maxresdefault.jpg" alt="Genshin Impact" class="img-fluid" />
-                        </div>
-                        <div class="col-md-8 p-4">
-                            <h5 class="card-title h3">Genshin Impact</h5>
-                            <p class="card-text lead">An open-world action RPG. Embark on a journey across the magical world of Teyvat with diverse characters.</p>
-                            <table class="zaka-mini-table">
-                            <tr>
-                            <th>Downloads</th>
-                            <th>Rating</th>
-                            <th>Price</th>
-                            </tr>
-                            <tr>
-                            <td>60M</td>
-                            <td>4.7/5</td>
-                            <td>Free</td>
-                            </tr>
-                        </table>
-                            <br>
-                            <a href="#" class="btn-primary-zaka">Buy Mora-points Now</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-12 mb-4">
-                <div class="glass-card p-0 overflow-hidden">
-                    <div class="row g-0 align-items-center">
-                        <div class="col-md-4">
-                            <img src="https://i0.wp.com/gamingrespawn.com/wp-content/uploads/2019/02/apex-legends-keyart.jpg?fit=1920%2C1080&ssl=1" alt="Apex Legends" class="img-fluid" />
-                        </div>
-                        <div class="col-md-8 p-4">
-                            <h5 class="card-title h3">Apex Legends</h5>
-                            <p class="card-text lead">Master an ever-growing roster of powerful Legends in this strategic Battle Royale set in the Outlands.</p>
-                            <table class="zaka-mini-table">
-                            <tr>
-                            <th>Downloads</th>
-                            <th>Rating</th>
-                            <th>Price</th>
-                            </tr>
-                            <tr>
-                            <td>100M</td>
-                            <td>4.4/5</td>
-                            <td>Free</td>
-                            </tr>
-                            </table>
-                            <br>
-                            <a href="#" class="btn-primary-zaka">Buy Apex-Ponts Now </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-12 mb-4">
-                <div class="glass-card p-0 overflow-hidden">
-                    <div class="row g-0 align-items-center">
-                        <div class="col-md-4">
-                            <img src="https://moewalls.com/wp-content/uploads/2026/03/leon-resident-evil-9-requiem-thumb.jpg" alt="Roblox" class="img-fluid" />
-                        </div>
-                        <div class="col-md-8 p-4">
-                            <h5 class="card-title h3">Resident Evil Requiem</h5>
-                            <p class="card-text lead">The most famous hurror game in 2026. </p>
-                            <table class="zaka-mini-table">
-                            <tr>
-                            <th>Downloads</th>
-                            <th>Rating</th>
-                            <th>Price</th>
-                            </tr>
-                            <tr>
-                            <td>20M</td>
-                            <td>4.9/5</td>
-                            <td>59.99</td>
-                            </tr>
-                        </table>
-                        <br>
-                            <a href="#" class="btn-primary-zaka">Get for 59.99</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
         </div>
-
-        
-
-        <section class="glass-card">
-            <h4>Record a Community Review</h4>
-            <form action="https://httpbin.org/get" method="get">
-                <div class="mb-3">
-                    <label for="review-title" class="form-label">Review Headline:</label>
-                    <input type="text" id="review-title" name="review-title" class="form-control" placeholder="A masterpiece of Omani tech!" />
-                </div>
-                <div class="mb-3">
-                    <label for="game-select" class="form-label">Select Game:</label>
-                    <select id="game-select" name="game-select" class="form-control">
-                        <option value="fortnite">Fortnite</option>
-                        <option value="cod">Call of Duty: Warzone</option>
-                        <option value="minecraft">Minecraft</option>
-                        <option value="valorant">Valorant</option>
-                        <option value="lol">League of Legends</option>
-                        <option value="genshin">Genshin Impact</option>
-                        <option value="apex">Apex Legends</option>
-                        <option value="roblox">Roblox</option>
-                    </select>
-                </div>
-                <div class="mb-3">
-                    <label class="form-label">Star Rating (1-5):</label>
-                    <div class="d-flex justify-content-between">
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="stars" id="star1" value="1" />
-                            <label class="form-check-label" for="star1">1</label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="stars" id="star2" value="2" />
-                            <label class="form-check-label" for="star2">2</label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="stars" id="star3" value="3" />
-                            <label class="form-check-label" for="star3">3</label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="stars" id="star4" value="4" />
-                            <label class="form-check-label" for="star4">4</label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="stars" id="star5" value="5" checked="checked" />
-                            <label class="form-check-label" for="star5">5</label>
-                        </div>
-                    </div>
-                </div>
-                <div class="mb-3">
-                    <label for="review-content" class="form-label">Review Body:</label>
-                    <textarea id="review-content" name="review-content" class="form-control" rows="4"></textarea>
-                </div>
-                <div class="mb-3 form-check">
-                    <input type="checkbox" id="anon" name="anon" class="form-check-input" />
-                    <label class="form-check-label" for="anon">Post anonymously</label>
-                </div>
-                <button type="submit" class="btn-primary-zaka w-100">Broadcast Review</button>
-            </form>
-        </section>
     </main>
 
     <footer id="main-footer">
         <div class="container text-center">
-        <p>Email:ZAKAforGamers@gmail.com<br>instagram:zakagg<br>X: zaka.gg<br>Discord: ZAKA Community</p>
+            <p>Email: ZAKAforGamers@gmail.com<br>Instagram: zakagg<br>X: zaka.gg<br>Discord: ZAKA Community</p>
         </div>
     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="scripts.js"></script>
 </body>
 </html>
