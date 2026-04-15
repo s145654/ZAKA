@@ -1,52 +1,16 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="ZAKA - The ultimate digital gaming platform and social network inspired by the future." />
-    <meta name="keywords" content="gaming, platform, social, ZAKA, Oman, tech" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ZAKA - The ultimate digital gaming platform and social network inspired by the future.">
     <title>ZAKA | Infinite Gaming</title>
-
-
-
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="styles.css" rel="stylesheet" />
-    <style type="text/css">
-
-        .hero {
-          text-align: center;
-          padding: 60px 20px;
-        }
-        .hero h1 {
-          font-size: 2.5em;
-        }
-        .btn {
-          background: #00adb5;
-          color: white;
-          padding: 10px 20px;
-          border-radius: 8px;
-          text-decoration: none;
-        }
-        .features {
-          display: flex;
-          gap: 20px;
-          justify-content: center;
-          margin: 40px 0;
-        }
-        .card {
-          background: rgba(255,255,255,0.1);
-          padding: 20px;
-          border-radius: 12px;
-          width: 200px;
-          text-align: center;
-        }
-    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg navbar-dark py-3">
+        <nav class="navbar navbar-expand-lg navbar-dark sticky-top py-3">
             <div class="container">
                 <a class="navbar-brand" href="index.html">                    
                     <img src="logo.png" alt="ZAKA Logo" width="60" height="60" class="me-2">
@@ -61,6 +25,10 @@
                         <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                         <li class="nav-item"><a class="nav-link" href="developer.html">Dev Portal</a></li>
                         <li class="nav-item"><a class="nav-link" href="store.html">Store</a></li>
+                        <li class="nav-item"><a class="nav-link" href="table_pages.html">Data Hub</a></li>
+                        <li class="nav-item"><a class="nav-link" href="questionnaire.html">Feedback</a></li>
+                        <li class="nav-item"><a class="nav-link" href="calculate.html">Calculator</a></li>
+                        <li class="nav-item"><a class="nav-link" href="funpage.html">Fun Page</a></li>
                     </ul>
                 </div>
             </div>
@@ -68,67 +36,84 @@
     </header>
 
     <main>
-        <section class="hero">
-            <h1>Welcome to ZAKA Gaming Platform</h1>
-            <p style="text-align: center;">Your gateway to immersive gaming experiences</p>
-            <a href="store.html" class="btn">Explore Store</a>
-        </section>
-        <section class="features">
-          <div class="card">
-            <h3>🎮 Games</h3>
-            <p>Browse the latest and trending games</p>
-          </div>
-        
-          <div class="card">
-            <h3>👨‍💻 Developers</h3>
-            <p>Join our developer community</p>
-          </div>
-        
-          <div class="card">
-            <h3>⭐ Reviews</h3>
-            <p>See what others think before you buy</p>
-          </div>
+        <!-- Slideshow Section -->
+        <section class="container py-5">
+            <div id="zakaCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="https://i.ytimg.com/vi/adGdyCdvKz4/maxresdefault.jpg" class="d-block w-100" alt="Fortnite">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Explore New Worlds</h5>
+                            <p>Dive into the ultimate Battle Royale experience.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://image.api.playstation.com/vulcan/ap/rnd/202508/2119/0e5bd9c98da8bbb6a35bec372b40dcb15093a50970c3b478.jpg" class="d-block w-100" alt="Call of Duty">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Intense Combat</h5>
+                            <p>High-octane FPS action across diverse warzones.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://w0.peakpx.com/wallpaper/105/594/HD-wallpaper-video-game-minecraft.jpg" class="d-block w-100" alt="Minecraft">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Build Your Dream</h5>
+                            <p>Explore infinite worlds and build anything you can imagine.</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#zakaCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#zakaCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                </button>
+            </div>
         </section>
 
         <section class="container py-5">
-            <div class="row">
+            <div class="row g-4">
                 <div class="col-md-8">
-                    <div class="glass-card">
-                        <h2>The Future of Play</h2>
-                        <p>ZAKA is not just a game store; it is a movement. Inspired by global giants but rooted in Omani excellence, we provide a decentralized space where players and creators thrive. Our platform integrates advanced AI automation to enhance your social and gaming experience.</p>
-                        
-                        <h3>Platform Features</h3>
-                        <ul class="zaka-list">
-                            <li>Real-time Multiplayer Matchmaking</li>
-                            <li>Integrated Social Network for Clans</li>
-                            <li>Developer Marketplace with 0% Commission</li>
-                            <li>Automated Game Distribution</li>
-                        </ul>
+                    <div class="glass-card h-100">
+                        <h1 class="display-4">Welcome to ZAKA Gaming Platform</h1>
+                        <p class="lead">Your gateway to immersive gaming experiences. Inspired by global giants but rooted in Omani excellence.</p>
+                        <p>ZAKA provides a decentralized space where players and creators thrive. Our platform integrates advanced AI automation to enhance your social and gaming experience.</p>
+                        <div class="row mt-4">
+                            <div class="col-6">
+                                <ul class="list-unstyled">
+                                    <li>🚀 Multiplayer Matchmaking</li>
+                                    <li>💬 Clan Social Network</li>
+                                </ul>
+                            </div>
+                            <div class="col-6">
+                                <ul class="list-unstyled">
+                                    <li>💰 0% Commission</li>
+                                    <li>📦 Automated Distribution</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <a href="store.html" class="btn-primary-zaka mt-3">Explore Store</a>
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="glass-card">
+                    <div class="glass-card h-100">
                         <h4>Join the Network</h4>
                         <p>Register today to start your journey.</p>
-
-
-
-
                         <form action="https://httpbin.org/get" method="get">
                             <div class="mb-3">
                                 <label for="username" class="form-label">Username:</label>
-                                <input type="text" id="username" name="username" class="form-control" required="required" />
+                                <input type="text" id="username" name="username" class="form-control" required>
                             </div>
                             <div class="mb-3">
                                 <label for="email" class="form-label">Email:</label>
-                                <input type="email" id="email" name="email" class="form-control" required="required" />
+                                <input type="email" id="email" name="email" class="form-control" required>
                             </div>
                             <div class="mb-3">
                                 <label for="password" class="form-label">Password:</label>
-                                <input type="password" id="password" name="password" class="form-control" required="required" />
+                                <input type="password" id="password" name="password" class="form-control" required>
                             </div>
                             <div class="mb-3 form-check">
-                                <input type="checkbox" id="terms" name="terms" class="form-check-input" />
+                                <input type="checkbox" id="terms" name="terms" class="form-check-input">
                                 <label class="form-check-label" for="terms">I agree to Terms</label>
                             </div>
                             <button type="submit" class="btn-primary-zaka w-100">Register</button>
@@ -137,54 +122,19 @@
                 </div>
             </div>
         </section>
-
-        <section class="container py-5">
-            <h2>Recent Community Leaders</h2>
-            <p>Meet the top performers in our social hub from the past month.</p>
-
-
-            <div class="table-responsive">
-                <table class="zaka-mini-table">
-                    <thead >
-                        <tr>
-                            <th rowspan="2">Rank</th>
-                            <th rowspan="2">Player</th>
-                            <th colspan="2" style="text-align: center;">Achievements</th>
-                        </tr>
-                        <tr>
-                            <th>Level</th>
-                            <th>Points</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>AdnanGamez</td>
-                            <td>99</td>
-                            <td>15,000</td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>AlmoayedPro</td>
-                            <td>95</td>
-                            <td>14,200</td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>KhalidElite</td>
-                            <td>88</td>
-                            <td>12,500</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </section>
     </main>
 
     <footer id="main-footer">
-        <div class="container text-center">
-        <p>Email:ZAKAforGamers@gmail.com<br>instagram:zakagg<br>X: zaka.gg<br>Discord: ZAKA Community</p>
+        <div class="container text-center mb-5">
+            <p>Email: ZAKAforGamers@gmail.com<br>Instagram: zakagg<br>X: zaka.gg<br>Discord: ZAKA Community</p>
+        </div>
+        <!-- Moving Banner -->
+        <div class="moving-banner">
+            <p id="banner-text">Welcome to ZAKA Gaming website! Loading current date and time...</p>
         </div>
     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="scripts.js"></script>
 </body>
 </html>
