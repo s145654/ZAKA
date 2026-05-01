@@ -1,132 +1,47 @@
+<?php require_once 'navbar.php'; ?>
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="dark">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bill Calculator | ZAKA</title>
+    <title>Calculator | ZAKA</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="styles.css" rel="stylesheet">
 </head>
-
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg navbar-dark sticky-top py-3">
-            <div class="container">
-                <a class="navbar-brand" href="index.html">
-                    <img src="logo.png" alt="ZAKA Logo" width="60" height="60" class="me-2">
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
-                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-                        <li class="nav-item"><a class="nav-link" href="developer.html">Dev Portal</a></li>
-                        <li class="nav-item"><a class="nav-link" href="store.html">Store</a></li>
-                        <li class="nav-item"><a class="nav-link" href="questionnaire.html">Feedback</a></li>
-                        <li class="nav-item"><a class="nav-link active" href="calculate.html">Calculator</a></li>
-                        <li class="nav-item"><a class="nav-link" href="funpage.html">Fun Page</a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+        <?php getNavbar('calculate.php'); ?>
     </header>
 
     <main class="container py-5">
         <div class="row justify-content-center">
-            <div class="col-md-7">
+            <div class="col-md-6">
                 <div class="card p-4 border-secondary shadow">
-                    <h2 class="text-center mb-1">ZAKA Store Bill Calculator</h2>
-                    <p class="text-center text-white-50 mb-4">
-                        Calculate your total purchase with applicable discounts.
-                    </p>
-
-                    <div class="alert alert-info mb-4">
-                        <strong>Available Discounts:</strong>
-                        <ul class="mb-0 mt-1">
-                            <li><strong>Senior (60+):</strong> 15% off</li>
-                            <li><strong>Student (13-22):</strong> 5% off</li>
-                            <li><strong>Bulk Purchase (5+ items):</strong> extra 5% off</li>
-                        </ul>
-                    </div>
-
+                    <h2 class="text-center mb-4">Bill Calculator</h2>
                     <form onsubmit="calculateBill(event)">
                         <div class="mb-3">
-                            <label for="item-price" class="form-label">Game Price (USD $)</label>
-                            <div class="input-group">
-                                <span class="input-group-text bg-transparent text-white border-secondary">$</span>
-                                <input type="number" id="item-price" class="form-control" step="0.01" min="0.01"
-                                    placeholder="e.g. 29.99" required>
-                            </div>
-                            <div class="form-text text-white-50">Enter the price of one copy of the game.</div>
+                            <label class="form-label">Item Price ($)</label>
+                            <input type="number" id="item-price" class="form-control" step="0.01" required>
                         </div>
-
                         <div class="mb-3">
-                            <label for="item-qty" class="form-label">Quantity</label>
-                            <input type="number" id="item-qty" class="form-control" min="1" max="100" value="1"
-                                required>
-                            <div class="form-text text-white-50">Buy 5 or more for a bulk discount!</div>
+                            <label class="form-label">Quantity</label>
+                            <input type="number" id="item-qty" class="form-control" required>
                         </div>
-
                         <div class="mb-3">
-                            <label for="user-age" class="form-label">Your Age</label>
-                            <input type="number" id="user-age" class="form-control" min="1" max="120"
-                                placeholder="Enter your age" required>
-                            <div class="form-text text-white-50">
-                                Age determines eligibility for senior (60+) or student (13-22) discounts.
-                            </div>
+                            <label class="form-label">Your Age</label>
+                            <input type="number" id="user-age" class="form-control" required>
                         </div>
-
-                        <button type="submit" class="btn btn-primary w-100 btn-lg">
-                            Calculate My Total
-                        </button>
+                        <button type="submit" class="btn btn-primary w-100">Calculate Total</button>
                     </form>
-
-                    <div id="calc-result"></div>
-                </div>
-            </div>
-
-            <div class="col-md-4 mt-4 mt-md-0">
-                <div class="card p-4 border-secondary shadow">
-                    <h5 class="mb-3">How It Works</h5>
-                    <p class="text-white-50 small">
-                        This calculator uses <strong>if-else conditions</strong> in JavaScript
-                        to automatically apply the right discounts based on your age,
-                        order size, and membership status.
-                    </p>
-                    <hr class="border-secondary">
-                    <h6 class="mb-2">Formula:</h6>
-                    <code class="text-info small d-block mb-2">
-                        Subtotal = Price × Quantity
-                    </code>
-                    <code class="text-info small d-block mb-2">
-                        Total = Subtotal − Discounts
-                    </code>
-                    <hr class="border-secondary">
-                    <p class="text-white-50 small mb-0">
-                        Discounts are applied in this order:<br>
-                        1. Age-based discount first<br>
-                        2. Bulk purchase on remaining
-                    </p>
+                    <div id="calc-result" class="mt-4"></div>
                 </div>
             </div>
         </div>
     </main>
 
-    <footer id="main-footer">
-        <div class="container text-center mb-5">
-            <p>Email: ZAKAforGamers@gmail.com</p>
-        </div>
-        <div class="moving-banner">
-            <p id="banner-text">Loading...</p>
-        </div>
-    </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="scripts.js"></script>
+    <?php include 'footer.php'; ?>
+</body>
+</html>
 </body>
 
 </html>
